@@ -3,3 +3,4 @@
    <li (click)="onClickCity(city)" [ngClass]="{'selected' : city === selection}">{{city}}</li>
 </ul>
 <div *ngIf="selection">Tu ciudad es: <p [ngClass]="'selected'">{{selection}}</p></div>
+<app-add-city [titleBtn]="'Agregar ciudad'"></app-add-city>

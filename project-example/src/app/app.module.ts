@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { InterpolacionOneWayComponent } from './interpolacion-one-way/interpolacion-one-way.component';
 import { TwoWaydataBindingComponent } from './two-waydata-binding/two-waydata-binding.component';
 import { NgForComponent } from './ng-for/ng-for.component';
+import { AddCityComponent } from './add-city/add-city.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InterpolacionOneWayComponent,
     TwoWaydataBindingComponent,
-    NgForComponent
+    NgForComponent,
+    AddCityComponent
   ],
   imports: [
     BrowserModule,

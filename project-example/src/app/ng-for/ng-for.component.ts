@@ -19,4 +19,8 @@ export class NgForComponent implements OnInit {
     this.selection = city;
   }
 
+  onAddCity(){
+    
+  }
+
 }
