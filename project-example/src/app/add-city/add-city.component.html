@@ -1,1 +1,11 @@
+<h1>{{inputTitle}}</h1>
 
+<div class="form-section">
+    <div>
+        <label for="newItem">Agregar ciudad:</label>
+        <div>
+            <input type="text" id="newItem" #newItem>
+        </div>
+    </div>
+    <button (click)="onAddNewItem(newItem.value)" type="button">Save</button>
+</div>

@@ -11,7 +11,7 @@ export class NgForComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  citys: string[] = ['Madrid','Bilbao','Barcelona','Valencia'];
+  cities: string[] = ['Madrid','Bilbao','Barcelona','Valencia'];
   selection!: string;
 
   onClickCity(city:string){
@@ -19,8 +19,8 @@ export class NgForComponent implements OnInit {
     this.selection = city;
   }
 
-  onAddCity(){
-    
+  onAddCity(city:string){
+    this.cities.push(city)
   }
 
 }

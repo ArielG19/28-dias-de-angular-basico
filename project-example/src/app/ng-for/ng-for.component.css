@@ -1,12 +1,17 @@
 .selected{
     background: blueviolet;
-    padding: 10px;
+    padding: 5px 0px 5px 0px;
+    margin: 10px 0 10px 0;
     color: antiquewhite;
 }
 .unSelected{
     background: blue;
     color: antiquewhite;
-    padding: 10px;
+    padding: 5px 0px 5px 0px;
+    margin: 10px 0 10px 0;
+}
+div{
+    margin-bottom: 20px;
 }
 div p{
     display: inline;

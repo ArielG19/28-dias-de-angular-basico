@@ -1,6 +1,8 @@
-<ul *ngFor="let city of citys">
+<app-add-city [inputTitle]="'Agregar ciudad'" (outputItemEvent)="onAddCity($event)"></app-add-city>
+
+
+<ul>
    <!--li [ngClass]="'selected unSelected'">{{city}}</li-->
-   <li (click)="onClickCity(city)" [ngClass]="{'selected' : city === selection}">{{city}}</li>
+   <li *ngFor="let city of cities" (click)="onClickCity(city)" [ngClass]="{'selected' : city === selection}">{{city}}</li>
 </ul>
 <div *ngIf="selection">Tu ciudad es: <p [ngClass]="'selected'">{{selection}}</p></div>
-<app-add-city [titleBtn]="'Agregar ciudad'"></app-add-city>
