@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-city',
   templateUrl: './add-city.component.html',
-  styleUrls: ['./add-city.component.css']
+  styleUrls: ['./add-city.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush //evita que nuestra app se este re renderizando cada vez se produzca un cambio a nivel global de la app
 })
 export class AddCityComponent implements OnInit {
 

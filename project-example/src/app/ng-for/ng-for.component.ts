@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ng-for',
   templateUrl: './ng-for.component.html',
-  styleUrls: ['./ng-for.component.css']
+  styleUrls: ['./ng-for.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgForComponent implements OnInit {
 
