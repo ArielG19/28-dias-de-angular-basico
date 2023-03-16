@@ -1,3 +1,4 @@
-<ul>
-   <li *ngFor="let city of citys">{{city}}</li>
+<ul *ngFor="let city of citys">
+   <!--li [ngClass]="'selected unSelected'">{{city}}</li-->
+   <li [ngClass]="{'selected' : city === 'Madrid', 'unSelected' : city!= 'Madrid'}">{{city}}</li>
 </ul>
