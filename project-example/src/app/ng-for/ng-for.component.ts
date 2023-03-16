@@ -12,5 +12,11 @@ export class NgForComponent implements OnInit {
   ngOnInit(): void {
   }
   citys: string[] = ['Madrid','Bilbao','Barcelona','Valencia'];
+  selection!: string;
+
+  onClickCity(city:string){
+    //console.log(city);
+    this.selection = city;
+  }
 
 }

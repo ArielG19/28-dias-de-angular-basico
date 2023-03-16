@@ -1,4 +1,5 @@
 <ul *ngFor="let city of citys">
    <!--li [ngClass]="'selected unSelected'">{{city}}</li-->
-   <li [ngClass]="{'selected' : city === 'Madrid', 'unSelected' : city!= 'Madrid'}">{{city}}</li>
+   <li (click)="onClickCity(city)" [ngClass]="{'selected' : city === selection}">{{city}}</li>
 </ul>
+<div *ngIf="selection">Tu ciudad es: <p [ngClass]="'selected'">{{selection}}</p></div>

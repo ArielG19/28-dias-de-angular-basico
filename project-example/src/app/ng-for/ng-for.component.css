@@ -8,3 +8,6 @@
     color: antiquewhite;
     padding: 10px;
 }
+div p{
+    display: inline;
+}
