@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { InterpolacionOneWayComponent } from './interpolacion-one-way/interpolacion-one-way.component';
 import { TwoWaydataBindingComponent } from './two-waydata-binding/two-waydata-binding.component';
+import { NgForComponent } from './ng-for/ng-for.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InterpolacionOneWayComponent,
-    TwoWaydataBindingComponent
+    TwoWaydataBindingComponent,
+    NgForComponent
   ],
   imports: [
     BrowserModule,

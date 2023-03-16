@@ -1,2 +1,2 @@
 <input type="text" [(ngModel)]="name">
-<p>Mi nombre es: {{name}}</p>
+<p *ngIf="name">Si hay un valor, Mi nombre es: {{name}}</p>
