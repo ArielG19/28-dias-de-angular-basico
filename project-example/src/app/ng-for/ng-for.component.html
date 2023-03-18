@@ -3,6 +3,6 @@
 
 <ul>
    <!--li [ngClass]="'selected unSelected'">{{city}}</li-->
-   <li *ngFor="let city of cities" (click)="onClickCity(city)" [ngClass]="{'selected' : city === selection}">{{city}}</li>
+   <li *ngFor="let city of cities" (click)="onClickCity(city)" [ngClass]="{'selected' : city === selection}">{{city|uppercase}}</li>
 </ul>
 <div *ngIf="selection">Tu ciudad es: <p [ngClass]="'selected'">{{selection}}</p></div>
