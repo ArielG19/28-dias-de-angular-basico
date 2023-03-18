@@ -7,6 +7,7 @@ import { InterpolacionOneWayComponent } from './interpolacion-one-way/interpolac
 import { TwoWaydataBindingComponent } from './two-waydata-binding/two-waydata-binding.component';
 import { NgForComponent } from './ng-for/ng-for.component';
 import { AddCityComponent } from './add-city/add-city.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AddCityComponent } from './add-city/add-city.component';
     InterpolacionOneWayComponent,
     TwoWaydataBindingComponent,
     NgForComponent,
-    AddCityComponent
+    AddCityComponent,
+    FilterPipe,//declaramos nuestro pipe personalizado para poder usarlo
   ],
   imports: [
     BrowserModule,

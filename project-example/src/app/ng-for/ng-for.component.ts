@@ -14,6 +14,7 @@ export class NgForComponent implements OnInit {
   }
   cities: string[] = ['Madrid','Bilbao','Barcelona','Valencia'];
   selection!: string;
+  searchCity!: '';
 
   onClickCity(city:string){
     //console.log(city);

@@ -1,8 +1,18 @@
-<app-add-city [inputTitle]="'Agregar ciudad'" (outputItemEvent)="onAddCity($event)"></app-add-city>
+<section>
+   <div>
+      <h4>Buscar ciudades</h4>
+      <input type="text" placeholder="Buscar..." [(ngModel)]="searchCity">
+      <app-add-city [inputTitle]="'Agregar ciudad'" (outputItemEvent)="onAddCity($event)"></app-add-city>
+   </div>
+   
+   <ul>
+      <!--li [ngClass]="'selected unSelected'">{{city}}</li-->
+      <li *ngFor="let city of (cities | pipeFilter:searchCity)" (click)="onClickCity(city)" [ngClass]="{'selected' : city === selection}">
+         {{city}}
+      </li>
+   </ul>
+   <div *ngIf="selection">Tu ciudad es: 
+      <p [ngClass]="'selected'">{{selection}}</p>
+   </div>
+</section>
 
-
-<ul>
-   <!--li [ngClass]="'selected unSelected'">{{city}}</li-->
-   <li *ngFor="let city of cities" (click)="onClickCity(city)" [ngClass]="{'selected' : city === selection}">{{city|uppercase}}</li>
-</ul>
-<div *ngIf="selection">Tu ciudad es: <p [ngClass]="'selected'">{{selection}}</p></div>
