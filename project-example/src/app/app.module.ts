@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { NgForComponent } from './ng-for/ng-for.component';
 import { AddCityComponent } from './add-city/add-city.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,13 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     NgForComponent,
     AddCityComponent,
     FilterPipe,
-    ContactFormComponent,//declaramos nuestro pipe personalizado para poder usarlo
+    ContactFormComponent,
+    ContactReactiveComponent,//declaramos nuestro pipe personalizado para poder usarlo
   ],
   imports: [
     BrowserModule,
     FormsModule, //importando modulo para usar ngModel en los input
+    ReactiveFormsModule, //para trabajar formularios reactivos
   ],
   providers: [],
   bootstrap: [AppComponent]

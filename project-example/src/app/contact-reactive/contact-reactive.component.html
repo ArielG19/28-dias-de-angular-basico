@@ -1,0 +1,45 @@
+<pre>{{contactForm.value | json}}</pre>
+<h1>Contact Form</h1>
+<!-- usamos [formGroup] y formControlName para trabajar nuestro formulario reactivo-->
+<form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" formControlName="name"  required>
+        <!-- validamos que el campo name ha sido tocado y sea requerido -->
+        <p *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['required']" class="invalid-field">Este campo es requerido</p>
+
+        <!-- validamos que el campo name ha sido tocado y tenga mas de 3 caracteres -->
+        <p *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['minlength']" class="invalid-field">
+            El nombre debe de tener al menos {{contactForm.get('name')?.errors?.['minlength'].requiredLength}} caracteres
+        </p>
+    </div>
+    <div>
+        <label for="age">¿Eres mayor de edad?</label>
+        <input type="checkbox" id="age" name="age" formControlName="age">
+    </div>
+    <div>
+        <label for="departament">Seleccionar opción:</label>
+        <select name="departament" id="departament" name="departament" formControlName="departament">
+            <option selected>open menu</option>
+            <option value="marketing">Marketing</option>
+            <option value="sales">Sales</option>
+            <option value="cloud">Cloud</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div>
+        <label for="comments">Name:</label>
+        <textarea name="comments" id="comments" cols="30" rows="4" name="comments" formControlName="comments" required></textarea>
+        <p *ngIf="contactForm.get('comments')?.touched && contactForm.get('comments')?.errors?.['required']" class="invalid-field">Este campo es requerido</p>
+    </div>
+    <div>
+        <button type="submit" [disabled]="contactForm.invalid">Save</button>
+    </div>
+</form>
+<ul>
+    <li *ngFor="let form of saveForm; index as i">
+        {{form.name}} - {{form.departament}}
+        
+    </li>
+</ul>
+

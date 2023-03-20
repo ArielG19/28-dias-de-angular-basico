@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.invalid-field{
+    color: #e72727;
+    font-weight: 500;
+    background: antiquewhite;
+    padding: 10px;
+    border-radius: 5px;
+}
