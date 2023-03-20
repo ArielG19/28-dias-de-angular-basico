@@ -8,6 +8,7 @@ import { TwoWaydataBindingComponent } from './two-waydata-binding/two-waydata-bi
 import { NgForComponent } from './ng-for/ng-for.component';
 import { AddCityComponent } from './add-city/add-city.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     TwoWaydataBindingComponent,
     NgForComponent,
     AddCityComponent,
-    FilterPipe,//declaramos nuestro pipe personalizado para poder usarlo
+    FilterPipe,
+    ContactFormComponent,//declaramos nuestro pipe personalizado para poder usarlo
   ],
   imports: [
     BrowserModule,

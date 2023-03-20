@@ -1,0 +1,7 @@
+.invalid-field{
+    color: #e72727;
+    font-weight: 500;
+    background: antiquewhite;
+    padding: 10px;
+    border-radius: 5px;
+}

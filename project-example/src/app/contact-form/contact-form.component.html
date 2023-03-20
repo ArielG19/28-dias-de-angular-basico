@@ -1,0 +1,38 @@
+<pre>{{contactForm.value | json}}</pre>
+<h1>Contact Form</h1>
+<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="model.name" required #varRefenciaName="ngModel">
+        <p [hidden]="varRefenciaName.valid || varRefenciaName.pristine" class="invalid-field">Este campo es requerido</p>
+    </div>
+    <div>
+        <label for="age">¿Eres mayor de edad?</label>
+        <input type="checkbox" id="age" name="age" [(ngModel)]="model.age" required #varRefenciaAge="ngModel">
+        <p [hidden]="varRefenciaAge.valid || varRefenciaAge.pristine" class="invalid-field">Este campo es requerido</p>
+    </div>
+    <div>
+        <label for="departament">Seleccionar opción:</label>
+        <select name="departament" id="departament" name="departament" [(ngModel)]="model.departament">
+            <option selected>open menu</option>
+            <option value="marketing">Marketing</option>
+            <option value="sales">Sales</option>
+            <option value="cloud">Cloud</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div>
+        <label for="comments">Name:</label>
+        <textarea name="comments" id="comments" cols="30" rows="4" name="comments" ngModel required #varRefenciaComments="ngModel"></textarea>
+        <p [hidden]="varRefenciaComments.valid || varRefenciaComments.pristine" class="invalid-field">Este campo es requerido</p>
+    </div>
+    <div>
+        <button type="submit" [disabled]="contactForm.invalid">Save</button>
+    </div>
+</form>
+<ul>
+    <li *ngFor="let form of contact; index as i">
+        {{form.name}} - {{form.departament}}
+        
+    </li>
+</ul>
