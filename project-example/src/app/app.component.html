@@ -1,9 +1,13 @@
-<!--section>
-    <app-ng-for></app-ng-for>
-    <div>
-        <app-contact-form></app-contact-form>
-        <app-contact-reactive></app-contact-reactive>
-    </div>
-    
-</section-->
+<header>
+    <nav>
+        <ul>
+            <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"   routerLink="/">Mi nav</a></li>
+            <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/home">Home</a></li>
+            <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  routerLink="/contact-reactive">Form Reactive</a></li>
+            <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  routerLink="/contact-form">Form Driven</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
 <router-outlet></router-outlet>

@@ -11,6 +11,9 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
 import { AppRoutingModule } from './app.routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
+
+// cuando hay dos module -> indicar -m app para crear un nuevo componete
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { AppRoutingModule } from './app.routing.module';
     AddCityComponent,
     FilterPipe,
     ContactFormComponent,
-    ContactReactiveComponent,//declaramos nuestro pipe personalizado para poder usarlo
+    ContactReactiveComponent,
+    NavbarComponent,//declaramos nuestro pipe personalizado para poder usarlo
   ],
   imports: [
     BrowserModule,
