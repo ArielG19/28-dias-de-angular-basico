@@ -6,3 +6,8 @@
     padding: 10px;
     border-radius: 5px;
 }
+section{
+    display: grid;
+    place-content: center;
+    padding-top: 3rem;
+}

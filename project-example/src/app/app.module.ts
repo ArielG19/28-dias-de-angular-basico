@@ -10,6 +10,7 @@ import { AddCityComponent } from './add-city/add-city.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ContactReactiveComponent } from './contact-reactive/contact-reactive.co
     BrowserModule,
     FormsModule, //importando modulo para usar ngModel en los input
     ReactiveFormsModule, //para trabajar formularios reactivos
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
