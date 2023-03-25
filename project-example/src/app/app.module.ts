@@ -12,6 +12,9 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
 import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { OtherComponent } from './others/other/other.component';
+import { DetailsComponent } from './others/details/details.component';
 
 // cuando hay dos module -> indicar -m app para crear un nuevo componete
 
@@ -25,7 +28,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     FilterPipe,
     ContactFormComponent,
     ContactReactiveComponent,
-    NavbarComponent,//declaramos nuestro pipe personalizado para poder usarlo
+    NavbarComponent,
+    NotFoundComponent,
+    OtherComponent,
+    DetailsComponent,//declaramos nuestro pipe personalizado para poder usarlo
   ],
   imports: [
     BrowserModule,
