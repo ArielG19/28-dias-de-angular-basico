@@ -22,10 +22,7 @@
             <label for="departament">Seleccionar opción:</label>
             <select name="departament" id="departament" name="departament" formControlName="departament">
                 <option selected>open menu</option>
-                <option value="marketing">Marketing</option>
-                <option value="sales">Sales</option>
-                <option value="cloud">Cloud</option>
-                <option value="other">Other</option>
+                <option *ngFor="let departament of departamentResolve" value="departament">{{departament}}</option>
             </select>
         </div>
         <div>
@@ -44,4 +41,3 @@
         </li>
     </ul>
 </section>
-

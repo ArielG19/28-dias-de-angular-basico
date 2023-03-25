@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Contact } from '../model/contactForm.model';
 
 @Component({
@@ -11,10 +12,14 @@ export class ContactReactiveComponent implements OnInit {
 //creamos nuestra propiedad para trabajar nuestro formulario reactivo
   contactForm!:FormGroup;
   saveForm : Contact [] = [];
+  departamentResolve:string[] = [];
 
-  constructor(private readonly formBuilder:FormBuilder) { }
+  constructor(private readonly formBuilder:FormBuilder, private readonly route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    //implementamos nuestro resolve con el route, data -> recibe la propiedad
+    this.departamentResolve = this.route.snapshot.data['departaments'];
+
     //igualamos la propiedad de contactForm con el metodo de las  validaciones
     this.contactForm = this.initForm();
     this.onPatchValue();
