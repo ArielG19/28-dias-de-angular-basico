@@ -9,7 +9,7 @@ import { NgForComponent } from './ng-for/ng-for.component';
 import { AddCityComponent } from './add-city/add-city.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
+//import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
 import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -27,7 +27,7 @@ import { DetailsComponent } from './others/details/details.component';
     AddCityComponent,
     FilterPipe,
     ContactFormComponent,
-    ContactReactiveComponent,
+    //ContactReactiveComponent, //ahora esta en su propio module
     NavbarComponent,
     NotFoundComponent,
     OtherComponent,
