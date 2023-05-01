@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://crudcrud.com/api/8bcf439ce03f4f3797b3b793afe102eb/cities' //api servidor, o internet
+  api: 'https://644f8becba9f39c6ab662b79.mockapi.io/api/cities' //api servidor, o internet
 };
 
 /*

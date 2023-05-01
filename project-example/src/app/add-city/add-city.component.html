@@ -7,5 +7,5 @@
             <input type="text" id="newItem" #newItem>
         </div>
     </div>
-    <button (click)="onAddNewItem(newItem.value)" type="button">Save</button>
+    <button (click)="onAddNewItem(newItem.value); newItem.value= '' " type="button">Save</button>
 </div>

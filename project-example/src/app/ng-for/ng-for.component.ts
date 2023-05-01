@@ -10,7 +10,7 @@ import { DataService } from '../service/data.service';
 })
 export class NgForComponent implements OnInit {
   //injectamos nuestro servicio
-  constructor(private readonly data:DataService) { }
+  constructor(private readonly service:DataService) { }
 //cities: string[] = ['Madrid','Bilbao','Barcelona','Valencia'];
 
   //cities es un array de tipo City
@@ -22,7 +22,7 @@ export class NgForComponent implements OnInit {
 
   ngOnInit(): void {
     //hacemos nuestra petecion get, para trear las ciudades
-    this.data.getCityService().subscribe(res => {
+    this.service.getCityService().subscribe(res => {
       //this.cities recibe toda la data del response
       this.cities = [...res];
       //console.log(this.cities)
@@ -31,20 +31,40 @@ export class NgForComponent implements OnInit {
 
   
   onCitySelection(city:City){
-    console.log(city._id);
+    //console.log(city._id);
     this.selection = city;
     //this.selection._id = city._id;
   }
 
   onAddCity(city:string):void{
-    this.data.addCityService(city).subscribe(res => {
+    this.service.addCityService(city).subscribe(res => {
       //La repuesta sera guardar los datos
       this.cities.push(res)
+      //limpiamos la seleccion
+      this.onClearSelection();
     })
   }
-  deleteCity(id:string){
-   // this.cities.pop(id)
-    console.log(id);
+  deleteCity(id:string){ 
+   // console.log(id)
+    if(confirm('¿Estas seguro que deseas eliminar esta ciudad?')){
+      this.service.deleteCityService(id).subscribe(res => {
+        //almacenamos en un array temporal la lista sin la ciudad eliminada
+        //filter incluye todos lo elementos diferentes(!==) a id(el que elimninamos)
+        const tempoArray = this.cities.filter(city => city._id !== id);
+        //actualizamos nuestro array con lo que hay en el array temporal
+        this.cities = [...tempoArray];
+
+        //limpiamos la seleccion
+        this.onClearSelection();
+      })
+    }
+  }
+
+  onClearSelection(){
+    this.selection = {
+      _id:'',
+      name:''
+    }
   }
 
 }
