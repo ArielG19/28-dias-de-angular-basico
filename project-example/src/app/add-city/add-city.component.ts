@@ -14,14 +14,14 @@ export class AddCityComponent implements OnInit {
 
   //usando output para pasar data del componente hijo al padre
   //creamos una nueva instancia del event emmiter
-  @Output() outputItemEvent = new EventEmitter<string>();
+  @Output() outputNameEvent = new EventEmitter<string>();
 
   ngOnInit(): void {
   }
 
   onAddNewItem(item:string){
     //console.log(item);
-    this.outputItemEvent.emit(item);
+    this.outputNameEvent.emit(item);
   }
 
 }

@@ -10,7 +10,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes)], //forChild se utiliza cuando los modulos son lazyloading
   exports: [RouterModule]
 })
 export class ContactReactiveRoutingModule { }

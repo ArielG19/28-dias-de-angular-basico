@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OtherComponent } from './others/other/other.component';
 import { DetailsComponent } from './others/details/details.component';
+import {HttpClientModule} from '@angular/common/http'
 
 // cuando hay dos module -> indicar -m app para crear un nuevo componete
 
@@ -37,7 +38,9 @@ import { DetailsComponent } from './others/details/details.component';
     BrowserModule,
     FormsModule, //importando modulo para usar ngModel en los input
     ReactiveFormsModule, //para trabajar formularios reactivos
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,//Para usar llamada a apis
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

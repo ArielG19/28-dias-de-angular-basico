@@ -10,3 +10,10 @@
     padding: 5px 0px 5px 0px;
     margin: 10px 0 10px 0;
 }
+li{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #03A9F4;
+    padding: 6px;
+    margin: 7px 0px 7px 0px;
+}

@@ -2,17 +2,22 @@
    <div>
       <h4>Buscar ciudades</h4>
       <input type="text" placeholder="Buscar..." [(ngModel)]="searchCity">
-      <app-add-city [inputTitle]="'Agregar ciudad'" (outputItemEvent)="onAddCity($event)"></app-add-city>
+      <!--Agregar nueva ciudad-->
+      <app-add-city [inputTitle]="'Agregar ciudad'" (outputNameEvent)="onAddCity($event)"></app-add-city>
    </div>
    
+   <!--Lista de ciudades-->
    <ul>
-      <!--li [ngClass]="'selected unSelected'">{{city}}</li-->
-      <li *ngFor="let city of (cities | pipeFilter:searchCity)" (click)="onClickCity(city)" [ngClass]="{'selected' : city === selection}">
-         {{city}}
+      <!-- Validamos si selection y city son validos(no sean nulas) y si son validos comparamos las propiedades y agregamos la clase-->
+      <li *ngFor="let city of (cities | pipeFilter:searchCity)" (click)="onCitySelection(city)" [ngClass]="{'selected': selection && city && city._id === selection._id}">
+         {{city.name}} <button type="button" (click)="deleteCity(city.name)">Delete</button>
       </li>
+      
    </ul>
+
+   <!--Ciudad seleccionada-->
    <div *ngIf="selection">Tu ciudad es: 
-      <p [ngClass]="'selected'">{{selection}}</p>
+      <p [ngClass]="'selected'">{{selection.name}}</p>
    </div>
 </section>
 
