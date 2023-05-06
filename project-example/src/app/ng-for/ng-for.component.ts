@@ -19,6 +19,8 @@ export class NgForComponent implements OnInit {
   //selection!: string;
   selection!: City;
   searchCity!: '';
+  editItem!:City;
+
 
   ngOnInit(): void {
     //hacemos nuestra petecion get, para trear las ciudades
@@ -33,7 +35,7 @@ export class NgForComponent implements OnInit {
   onCitySelection(city:City){
     //console.log(city._id);
     this.selection = city;
-    //this.selection._id = city._id;
+    
   }
 
   onAddCity(city:string):void{
@@ -44,6 +46,28 @@ export class NgForComponent implements OnInit {
       this.onClearSelection();
     })
   }
+  getCityId(city:City){
+    this.editItem = city
+  }
+
+ onKeyUp(event: Event, editItem: City){
+  console.log(editItem)
+  //con los input hay una pequeña variacion
+  const element = event.target as HTMLInputElement;
+  this.editItem.name = element.value
+  //console.log(this.editItem)
+  
+  //actualizamos nuestro servicio
+   this.service.updateCityService(editItem).subscribe(res => {
+      //almacenamos en un array temporal la lista sin la ciudad seleccionada
+      //filter incluye todos lo elementos diferentes(!==) a id(seleccionamos)
+      const tempoArray = this.cities.filter(city => city._id !== editItem._id);
+      //actualizamos el array + la nueva ciudad(actulizacion)
+      this.cities = [...tempoArray,this.editItem];
+
+    })
+ 
+}
   deleteCity(id:string){ 
    // console.log(id)
     if(confirm('¿Estas seguro que deseas eliminar esta ciudad?')){
