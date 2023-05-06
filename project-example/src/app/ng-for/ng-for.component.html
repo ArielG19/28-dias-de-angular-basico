@@ -1,31 +1,58 @@
-<section>
-   <div>
-      <h4>Buscar ciudades</h4>
-      <input type="text" placeholder="Buscar..." [(ngModel)]="searchCity">
+<div class="container  mt-5">
+   <div class="row">
+     <div class="col-md-8">
+            <h4>Buscar ciudades</h4>
+            <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="searchCity">
+     </div>
+     <div class="col-md-4">
       <!--Agregar nueva ciudad-->
       <app-add-city [inputTitle]="'Agregar ciudad'" (outputNameEvent)="onAddCity($event)"></app-add-city>
-   </div>
-   
-   <!--Lista de ciudades-->
-   <ul>
-      <!-- Validamos si selection y city son validos(no sean nulas) y si son validos comparamos las propiedades y agregamos la clase-->
-      <li *ngFor="let city of (cities | pipeFilter:searchCity)" (click)="onCitySelection(city)" [ngClass]="{'selected': selection && city && city._id === selection._id}">
-         {{city.name}} 
-         <button *ngIf="city?._id === selection?._id" type="button" (click)="getCityId(city)">editar</button>
-         <button *ngIf="city?._id === selection?._id" type="button" (click)="deleteCity(city._id)">Delete</button>
-      </li>
+     </div>
+
+     <div class="col-md-12 mt-5">
+       <!--Lista de ciudades-->
+       <ul class="list-group">
+         <!-- Validamos si selection y city son validos(no sean nulas) y si son validos comparamos las propiedades y agregamos la clase-->
+         <li *ngFor="let city of (cities | pipeFilter:searchCity)" 
+             (click)="onCitySelection(city)" class="list-group-item mt-1" 
+            [ngClass]="{'list-group-item-action': selection && city && city._id === selection._id}">{{city.name}} 
+            <button *ngIf="city?._id === selection?._id" 
+                     type="button" class="btn btn-danger float-end" 
+                     (click)="deleteCity(city._id)">Delete</button>
+            <button *ngIf="city?._id === selection?._id" 
+                     type="button" class="btn btn-primary float-end"  data-bs-toggle="modal" data-bs-target="#exampleModal"
+                     (click)="getCityId(city)">editar</button>
+         </li>
+      </ul>
+      <!--Ciudad seleccionada-->
+      <!--div *ngIf="selection?._id">Tu ciudad es: 
+         <p [ngClass]="'selected'">{{selection.name}}</p>
+      </div-->
       
-   </ul>
-
-   <!--Ciudad seleccionada-->
-   <!--div *ngIf="selection?._id">Tu ciudad es: 
-      <p [ngClass]="'selected'">{{selection.name}}</p>
-   </div-->
-   <div *ngIf="selection && editItem && editItem._id === selection._id">
-      <h2>Editar ciudad</h2>
-      <input type="text" [value]="editItem.name" (keyup.enter)="onKeyUp($event,editItem)">
+     </div>
    </div>
-   
+</div>
+
+ 
+<section>
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar item</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+            <div *ngIf="selection && editItem && editItem._id === selection._id">
+               <input type="text" class="form-control" [value]="editItem.name" (keyup.enter)="onKeyUp($event,editItem)">
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+         </div>
+      </div>
+      </div>
+   </div>
 </section>
-
-

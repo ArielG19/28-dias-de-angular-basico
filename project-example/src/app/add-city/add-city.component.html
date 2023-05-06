@@ -1,11 +1,7 @@
-<h1>{{inputTitle}}</h1>
-
-<div class="form-section">
-    <div>
-        <label for="newItem">Agregar ciudad:</label>
-        <div>
-            <input type="text" id="newItem" #newItem>
-        </div>
-    </div>
-    <button (click)="onAddNewItem(newItem.value); newItem.value= '' " type="button">Save</button>
+<h4>Agregar ciudad</h4>
+<div class="list-group list-group-horizontal justify-content-center">
+    <input type="text" class="form-control" placeholder="agregar nuevo item" id="newItem" #newItem>
+    <button type="button" class="btn btn-primary"  (click)="onAddNewItem(newItem.value); newItem.value='' ">Save</button>
 </div>
+
+

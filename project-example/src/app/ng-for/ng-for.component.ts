@@ -21,7 +21,6 @@ export class NgForComponent implements OnInit {
   searchCity!: '';
   editItem!:City;
 
-
   ngOnInit(): void {
     //hacemos nuestra petecion get, para trear las ciudades
     this.service.getCityService().subscribe(res => {
